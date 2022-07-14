@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Circle</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
+        body {
+            display: grid;
+            height: 100vh;
+            background-color: #1A4341;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .big {
+            height: 350px;
+            width: 350px;
+            border-radius: 50%;
+            background-color: #1A4341;
+            position: relative;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 0px;
+            animation: rotate 3s alternate-reverse infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: scale(100) rotate(90deg)
+            }
+
+            50% {
+                transform: scale(0.8) translateX(0vw) translateY(0rem)
+            }
+
+            75% {
+                transform: scale(1) translateY(-2rem)
+            }
+
+            100% {
+                transform: scale(0) translateX(0vw) translateY(-50rem) rotate(90deg)
+            }
+        }
+
+        .big::before {
+            content: "";
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+            background-color: #998235;
+            z-index: 0;
+        }
+        
+        .rec {
+            height: 30px;
+            width: 400px;
+            background-color: #F3AC3C;
+            z-index: 1;
+            box-shadow: 0 0 0 30px #1A4341,
+                0 0 0 60px #F3AC3C,
+                0 0 0 90px #1A4341;
+        }
+        h1{
+            position: fixed;
+            font-family: 'Rubik Moonrocks', cursive;
+            top: calc(100vh-150px);
+            color: #1A4341;
+            z-index: 100;
+            margin: 0px;
+            
+        }
+        #left{
+           animation: left 6s alternate-reverse infinite;
+            animation-timing-function: ease-in-out;
+            
+        }
+        @keyframes left {
+            0%{
+                left:0px;
+                transform: scale(0);
+            }
+            50%{
+                left: 30vw; 
+                transform: scale(20);
+            }
+            100%{
+                left:0px;
+                transform: scale(0);
+            }
+        }
+        #right{
+            right: 400px;
+            animation: right 6s alternate-reverse infinite;
+            animation-timing-function: ease-in-out;
+        }
+        @keyframes right {
+            0%{
+                right: 0px;
+                transform: scale(0);
+            }
+            50%{
+                right: 30vw;
+                transform: scale(20);
+            }
+            100%{
+                right: 0px;
+                transform: scale(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div class="rec"></div>
+    </div>
+    <h1 id="left">6</h1>
+    <h1 id="right">9</h1>
+</body>
+
+</html>
