@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>69</title>
+    <style>
+        body {
+            display: grid;
+            height: 100vh;
+            background-color: #6592CF;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .big {
+            height: 200px;
+            width: 200px;
+            margin: 4rem;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #6592CF;
+            position: relative;
+            border: 100px solid #245D83;
+            animation: down 4s linear infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        .big:first-of-type {
+            animation: up 4s linear infinite;
+        }
+        @keyframes up {
+            from{
+                transform: rotate(40deg) translateX(4rem);
+            }
+            50%{
+                transform: rotate(40deg) translateX(5rem);
+            }
+            to{
+                transform: rotate(40deg) translateX(4rem);
+            }
+        }
+        @keyframes down {
+            from{
+                transform: rotate(220deg) translateX(4rem);
+            }
+            50%{
+                transform: rotate(220deg) translateX(5rem);
+            }
+            to{
+                transform: rotate(220deg) translateX(4rem);
+            }
+        }
+        .container {
+            position: relative;
+            transform: translateY(-2rem);
+        }
+
+        .container::before {
+            content: "";
+            height: 100px;
+            width: 100px;
+            transform: perspective(1em) rotateX(30deg) scale(1, 0.3);
+            filter: blur(2em);
+            bottom: -5rem;
+            animation: upShadow 4s linear infinite;
+            animation-timing-function: ease-in-out;
+            left: 17rem;
+            z-index: 10;
+            position: absolute;
+        }
+        @keyframes upShadow {
+            from{
+                background-color: rgba(0, 0, 0, 0.139);
+            }
+            50%{
+                background-color: rgba(0, 0, 0, 0.523);
+            }
+            to{
+                background-color: rgba(0, 0, 0, 0.139);
+            }
+        }
+        .container::after {
+            content: "";
+            height: 100px;
+            width: 100px;
+            transform: perspective(1em) rotateX(30deg) scale(1, 0.3);
+            filter: blur(2em);
+            bottom: -5rem;
+            background-color: rgb(0 0 0 / 37%);
+            left: 45rem;
+            z-index: 10;
+            position: absolute;
+            animation: downShadow 4s linear infinite;
+            animation-timing-function: ease-in-out;
+        }
+        @keyframes downShadow {
+            from{
+                background-color: rgba(0, 0, 0, 0.523);
+            }
+            50%{
+                background-color: rgba(0, 0, 0, 0.139);
+            }
+            to{
+                background-color: rgba(0, 0, 0, 0.523);
+            }
+        }
+        .big::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            height: 200px;
+            width: 200px;
+            background-color: #6592CF;
+            z-index: 0;
+        }
+
+        .big::after {
+            content: "";
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            height: 200px;
+            width: 100px;
+            background-color: #245D83;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="big"></div>
+        <div class="big"></div>
+    </div>
+</body>
+
+</html>
